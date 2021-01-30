@@ -47,20 +47,18 @@ public class DragDropItem : MonoBehaviour
         }
 
         Vector3 mousePos = context.ReadValue<Vector2>();
+        var worldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         if (objectTransformToDrag == null)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(mousePos);
-
-            if (Physics.Raycast(ray, out hit))
+            RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+            if (hit.transform != null && hit.transform.GetComponent<DragDropItem>() != null)
             {
                 objectTransformToDrag = hit.transform;
             }
         }
         else
         {
-            var worldPos = Camera.main.ScreenToWorldPoint(mousePos);
             worldPos.z = objectTransformToDrag.position.z;
             objectTransformToDrag.position = worldPos;
         }
