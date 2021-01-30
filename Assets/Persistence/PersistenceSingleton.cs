@@ -4,11 +4,11 @@ public sealed class PersistenceSingleton
 {
     private static PersistenceSingleton instance = null;
 
-    public static List<ItemTypes> FoundItems
+    public HashSet<ItemTypes> FoundItems
     {
         get { return foundItems;  }
     }
-    private static List<ItemTypes> foundItems = new List<ItemTypes>();
+    private static HashSet<ItemTypes> foundItems = new HashSet<ItemTypes>();
 
     private PersistenceSingleton() { }
 
@@ -27,6 +27,8 @@ public sealed class PersistenceSingleton
 
     public void AddNewItem(ItemTypes itemType)
     {
-        foundItems.Add(itemType);
+        //Debug.Log("adding item " + itemType);
+        var success = foundItems.Add(itemType);
+        //Debug.Log("item was already in hashset: " + !success);
     }
 }

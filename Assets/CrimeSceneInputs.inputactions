@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "SwitchScene",
+                    "type": "Button",
+                    "id": "2a8cc9a0-0da6-450b-a8d6-dd3aad17fb6a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -280,6 +288,28 @@
                     "action": "MoveTo",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "388b5cc0-f15f-4af9-92df-05809fd0e556",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SwitchScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1cfc9c75-bb20-4d2b-b6ec-d487c01f54e5",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SwitchScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -364,6 +394,14 @@
                     "type": "PassThrough",
                     "id": "3aca1cae-60b1-4a8e-9e19-09b9efac6888",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchScene",
+                    "type": "Button",
+                    "id": "75b145e7-a8dd-4ab9-aea9-3e93879c55cf",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -784,6 +822,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "57b45a84-e130-4a22-8269-15f6e7eb15d3",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SwitchScene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
