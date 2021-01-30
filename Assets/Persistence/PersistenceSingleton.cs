@@ -30,6 +30,6 @@ public sealed class PersistenceSingleton
     {
         //Debug.Log("adding item " + itemType);
         var success = foundItems.Add(itemType);
-        Debug.Log("item was already in hashset: " + !success);
+        //Debug.Log("item was already in hashset: " + !success);
     }
 }
