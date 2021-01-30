@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public class Dialogue : MonoBehaviour
 {
 
+    public string introduction;
+
     public string question1;
     public string question2;
     public string question3;
@@ -15,6 +17,11 @@ public class Dialogue : MonoBehaviour
     public string response1;
     public string response2;
     public string response3;
+
+    public string questionPrefix;
+
+    public string suspectName;
+
     // Start is called before the first frame update
     void Start()
     {
