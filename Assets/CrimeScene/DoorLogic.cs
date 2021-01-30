@@ -36,7 +36,6 @@ public class DoorLogic : MonoBehaviour
         RaycastHit2D doorHit = Array.Find(hit2dList, hit => hit.collider.gameObject == this.gameObject);
         if (doorHit.collider != null)
         {
-            Debug.Log("going through door!");
             goThroughDoor();
         } 
 
