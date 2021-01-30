@@ -110,11 +110,11 @@ public class CrimeSceneControl : MonoBehaviour
         // Depending on the animations we have, this might get replaced
         if (destination.x < player.transform.position.x)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
         else
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
     }
 

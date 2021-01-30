@@ -1,104 +1,136 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5749470653268911035
-PrefabInstance:
+--- !u!1 &5074634903475050805
+GameObject:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5911783643276910621}
+  - component: {fileID: 6302858356235355871}
+  - component: {fileID: 37393054042278112}
+  - component: {fileID: 5487593318958388242}
+  m_Layer: 0
+  m_Name: Weeping Person_ Pierre Variant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5911783643276910621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074634903475050805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.062498, y: 3.4255056, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6302858356235355871
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074634903475050805}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d76fdfdb87774d34794227406c11edee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8.5, y: 14}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &37393054042278112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074634903475050805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ed1ad3b96cae34baf4df695e7445d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introduction: '*sniff* w-what do you want?'
+  question1: Are you alright? Did something happen to you?
+  question2: Were you here the whole evening?
+  question3: 'Did you see anything suspicious? '
+  response1: I-it is ok. I am fine. Nothing you could do about anyway. It's just
+    that no one knows my name is actually Perry!
+  response2: I arrived around 7 pm *sniff* a-and was here since.
+  response3: 'Uh.. the wardrobe attendant was absent for quite some time. '
+  questionPrefix: Sorry to interrupt, I have some Questions
+  suspectName: Pierre
+  evidenceResponseNumber: 3
+  reward: 12
+--- !u!61 &5487593318958388242
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074634903475050805}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.09, y: 17.72}
+    newSize: {x: 8.5, y: 14}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: reward
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: question1
-      value: Are you alright? Did something happen to you?
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: question2
-      value: Were you here the whole evening?
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: question3
-      value: 'Did you see anything suspicious? '
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: response1
-      value: I-it is ok. I am fine. Nothing you could do about anyway. It's just
-        that no one knows my name is actually Perry!
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: response2
-      value: I arrived around 7 pm *sniff* a-and was here since.
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: response3
-      value: 'Uh.. the wardrobe attendant was absent for quite some time. '
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: suspectName
-      value: Pierre
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: introduction
-      value: '*sniff* w-what do you want?'
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: questionPrefix
-      value: Sorry to interrupt, I have some Questions
-      objectReference: {fileID: 0}
-    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: evidenceResponseNumber
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 695384575228885646, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_Name
-      value: Weeping Person_ Pierre Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.062498
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.4255056
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+  m_Size: {x: 7.09, y: 17.72}
+  m_EdgeRadius: 0

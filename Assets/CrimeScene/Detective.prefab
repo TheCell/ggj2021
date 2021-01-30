@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 57ab9db94e6afc640b496a7c3f370142, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 987923f242a61cc4c9071e943d57403f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,6 +167,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3aca1cae-60b1-4a8e-9e19-09b9efac6888
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2a8cc9a0-0da6-450b-a8d6-dd3aad17fb6a
+    m_ActionName: Player/SwitchScene[/Keyboard/space,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75b145e7-a8dd-4ab9-aea9-3e93879c55cf
+    m_ActionName: UI/SwitchScene[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -187,6 +195,10 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   player: {fileID: 6937403763722419505}
   spriteRenderer: {fileID: 6937403763722419510}
+  dialogueControl: {fileID: 0}
+  dialogueOption1: {fileID: 0}
+  dialogueOption2: {fileID: 0}
+  dialogueOption3: {fileID: 0}
 --- !u!61 &-447617445964572685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,21 +209,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.5, y: 14}
+    oldSize: {x: 6.5, y: 17.72}
     newSize: {x: 8.5, y: 14}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.5, y: 14}
+  m_Size: {x: 6.5, y: 17.72}
   m_EdgeRadius: 0
 --- !u!50 &1778645745951365113
 Rigidbody2D:
