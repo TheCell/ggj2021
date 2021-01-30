@@ -108,13 +108,14 @@ public class CrimeSceneControl : MonoBehaviour
 
         }
 
-        // Scoped to handle dialogues, cause I'm lazy as f
+        // Scoped to handle dialogues and movement, cause I'm lazy as f
         {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
 
             RaycastHit2D[] hit2dList = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
-            foreach (RaycastHit2D hit2d in hit2dList) {
+            foreach (RaycastHit2D hit2d in hit2dList)
+            {
                 if (hit2d.collider != null && hit2d.collider.gameObject != this.gameObject)
                 {
                     interactionTarget = hit2d.collider.gameObject;
@@ -122,15 +123,16 @@ public class CrimeSceneControl : MonoBehaviour
             }
 
 
-            // Convert the Mouse current position in the screen to the current position in the world
-
-            destination = mouseWorldPos;
-            // The z value is not useful here, we set to 0
-            destination.z = 0;
-
+            // We want to move only if the ground is in the collider list
+            var walkableAreaHit = Array.Find(hit2dList, hit => hit.collider.gameObject.name == "WalkableArea");
+            if (walkableAreaHit.collider != null){
+                destination = mouseWorldPos;
+                // The z value is not useful here, we set to 0
+                destination.z = 0;
+            }
             // If the destination is to the left, flip the sprite to the left, and vice versa
             // Depending on the animations we have, this might get replaced
-            if (destination.x < player.transform.position.x)
+            if (mouseWorldPos.x < player.transform.position.x)
             {
                 spriteRenderer.flipX = false;
             }
