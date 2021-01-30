@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BulletinBoard.unity
     guid: 14466a6a65c40834bb797797ec6dc66d
+  - enabled: 1
+    path: Assets/Scenes/Bathroom.unity
+    guid: 6f278644db641ce4da2acc74004c5372
+  - enabled: 1
+    path: Assets/Scenes/CrimeScene.unity
+    guid: 36d9810a7c82fa14ebc634ad6e61d319
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a6f8fc91b3f72074a871bdcce6296ef0, type: 2}

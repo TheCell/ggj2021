@@ -23,6 +23,8 @@ public class CrimeSceneControl : MonoBehaviour
     public TMP_Text dialogueOption2;
     public TMP_Text dialogueOption3;
 
+    private InputAction moveToAction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,14 +47,14 @@ public class CrimeSceneControl : MonoBehaviour
             {
                 var actions = inputActionMap.actions;
 
-                var action = Array.Find(actions.ToArray(), ele => ele.name.Equals("MoveTo"));
-                if (action == null)
+                moveToAction = Array.Find(actions.ToArray(), ele => ele.name.Equals("MoveTo"));
+                if (moveToAction == null)
                 {
                     Debug.Log("MoveTo was not found!");
                 }
                 else
                 {
-                    action.started += MoveTo;
+                    moveToAction.started += MoveTo;
                 }
                 
             } else
@@ -70,6 +72,11 @@ public class CrimeSceneControl : MonoBehaviour
         {
             Debug.Log("Did not find a dialog control object!");
         }
+    }
+
+    private void OnDestroy()
+    {
+        moveToAction.started -= MoveTo;
     }
 
     // Update is called once per frame
