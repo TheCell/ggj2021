@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7230191403370376751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: reward
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question1
+      value: Have you been at the bar the whole evening?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question2
+      value: With whom have you talked this evening?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question3
+      value: I heard the music is very good in this Bar.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response1
+      value: 'Obviously I stopped by the wardrobe, I would not carry my jacket around
+        all evening. The rest of the time I was at the bar. '
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response2
+      value: Mostly with the Bartender, I did not dare to talk to those creeps in
+        the bathroom.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response3
+      value: "Eh\u2026 it has been better. The cellist was very inconsistent today,
+        kept messing up the pieces he played. \u2026 he did seem kind of nervous."
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: suspectName
+      value: Simon
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: introduction
+      value: "What do you still want?! Didn\u2019t your Boss fill you in? Someone
+        stole my Jewelry, I know it!"
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: questionPrefix
+      value: "I just have some direct questions I would like to ask\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: evidenceResponseNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 695384575228885646, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_Name
+      value: The Cell _ Simon Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
