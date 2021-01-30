@@ -19,31 +19,31 @@ public class Player : MonoBehaviour
         
     }
 
-    public void AddCollectible(int iD)
+    public void AddCollectible(ItemTypes itemType)
     {
         _collectedItems++;
         
-        switch (iD)
+        switch (itemType)
         {
-            case 0:
+            case ItemTypes.Item_CigaretteButt:
                 _comUIManager.DiplayItemOne();
                 break;
-            case 1:
+            case ItemTypes.Item_IDCard:
                 _comUIManager.DisplayItemTwo();
                 break;
-            case 2:
+            case ItemTypes.Item_Invoice:
                 _comUIManager.DisplayItemThree();
                 break;
-            case 3:
+            case ItemTypes.Item_Jewelry:
                 _comUIManager.DisplayItemFour();
                 break;
-            case 4:
+            case ItemTypes.Item_KODrops:
                 _comUIManager.DisplayItemFive();
                 break;
-            case 5:
+            case ItemTypes.Item_Rosin:
                 _comUIManager.DisplayItemSix();
                 break;
-            case 6:
+            case ItemTypes.Item_Warderobenumber:
                 _comUIManager.DisplayItemSeven();
                 break;
             default:
