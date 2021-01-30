@@ -15,6 +15,7 @@ public class CrimeSceneControl : MonoBehaviour
 
     private GameObject interactionTarget;
     private GameObject currentlyInteractingWith;
+    private HashSet<GameObject> collidingWith;
 
     public DialogueControl dialogueControl;
 
@@ -25,6 +26,7 @@ public class CrimeSceneControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        collidingWith = new HashSet<GameObject>();
         destination = player.transform.position;
 
         playerInput = GetComponent<PlayerInput>();
@@ -111,14 +113,17 @@ public class CrimeSceneControl : MonoBehaviour
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
 
-            RaycastHit2D hit2d = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit2d.collider != null)
-            {
-                interactionTarget = hit2d.collider.gameObject;
+            RaycastHit2D[] hit2dList = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+            foreach (RaycastHit2D hit2d in hit2dList) {
+                if (hit2d.collider != null && hit2d.collider.gameObject != this.gameObject)
+                {
+                    interactionTarget = hit2d.collider.gameObject;
+                }
             }
 
 
             // Convert the Mouse current position in the screen to the current position in the world
+
             destination = mouseWorldPos;
             // The z value is not useful here, we set to 0
             destination.z = 0;
@@ -133,21 +138,43 @@ public class CrimeSceneControl : MonoBehaviour
             {
                 spriteRenderer.flipX = true;
             }
+            checkAndExecuteDialogue();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == interactionTarget) { 
-            Dialogue otherDialogue = collision.gameObject.GetComponent<Dialogue>();
+        collidingWith.Add(collision.gameObject);
+        checkAndExecuteDialogue();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        collidingWith.Remove(collision.gameObject);
+        checkAndExecuteDialogue();
+    }
+
+    private bool checkAndExecuteDialogue()
+    {
+        if (interactionTarget == null)
+        {
+            return false;
+        }
+        if (collidingWith.Contains(interactionTarget))
+        {
+            Dialogue otherDialogue = interactionTarget.GetComponent<Dialogue>();
             if (otherDialogue != null)
             {
                 dialogueControl.ActivateDialogue(otherDialogue);
                 currentlyInteractingWith = interactionTarget;
                 playerInput.SwitchCurrentActionMap("UI");
                 destination = player.transform.position;
+                interactionTarget = null;
+                return true;
             }
         }
+        return false;
     }
     
 }
