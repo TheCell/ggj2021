@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,11 +10,14 @@ public class DialogueControl : MonoBehaviour
     public TMP_Text dialogueOption1;
     public TMP_Text dialogueOption2;
     public TMP_Text dialogueOption3;
+    public TMP_Text dialoguePrefix;
     public TMP_Text dialogueResponse;
+    public TMP_Text dialogueName;
 
     public Canvas dialogueCanvas;
     public GameObject questionPanel;
-   
+    public GameObject responsePanel;
+
 
     private PlayerInput playerInput;
 
@@ -53,9 +54,19 @@ public class DialogueControl : MonoBehaviour
             {
                 Debug.Log("Dialogue Option 3 was not set and could not find a named TMP_Text");
             }
+            dialoguePrefix = Array.Find(texts, text => text.name == "PrefixText");
+            if (dialogueResponse == null)
+            {
+                Debug.Log("Dialogue Option 3 was not set and could not find a named TMP_Text");
+            }
+            dialogueName = Array.Find(texts, text => text.name == "Name");
+            if (dialogueResponse == null)
+            {
+                Debug.Log("Dialogue Option 3 was not set and could not find a named TMP_Text");
+            }
         }
 
-        dialogueCanvas.enabled = false;
+        dialogueCanvas.gameObject.SetActive(false); ;
     }
 
     // Update is called once per frame
@@ -66,43 +77,66 @@ public class DialogueControl : MonoBehaviour
 
     public void ActivateDialogue(in Dialogue dialogue){
 
-        dialogueCanvas.enabled = true;
+        dialogueCanvas.gameObject.SetActive(true); ;
         currentDialogue = dialogue;
 
-        toggleButtonPanel(true);
+        toggleGroup(responsePanel, true);
+        toggleGroup(questionPanel, false);
+        dialogueResponse.SetText(currentDialogue.introduction);
 
+        dialoguePrefix.SetText(currentDialogue.questionPrefix);
         dialogueOption1.SetText(currentDialogue.question1);
         dialogueOption2.SetText(currentDialogue.question2);
         dialogueOption3.SetText(currentDialogue.question3);
+        dialogueName.SetText(currentDialogue.suspectName);
 
 
+    }
+
+    public void goToQuestions()
+    {
+        dialogueName.SetText("Detective");
+        toggleGroup(questionPanel, true);
+        toggleGroup(responsePanel, false);
     }
 
     public void Question1Asked()
     {
-        dialogueOption1.SetText("");
-        dialogueOption2.SetText("");
-        dialogueOption3.SetText("");
         dialogueResponse.SetText(currentDialogue.response1);
-        toggleButtonPanel(false);
+        toggleGroup(questionPanel, false);
+        toggleGroup(responsePanel, true);
+        dialogueName.SetText(currentDialogue.suspectName);
+
+        if (currentDialogue.evidenceResponseNumber == 1)
+        {
+            PersistenceSingleton.Instance.AddNewItem(currentDialogue.reward);
+        }
     }
 
     public void Question2Asked()
     {
-        dialogueOption1.SetText("");
-        dialogueOption2.SetText("");
-        dialogueOption3.SetText("");
         dialogueResponse.SetText(currentDialogue.response2);
-        toggleButtonPanel(false);
+        toggleGroup(questionPanel, false);
+        toggleGroup(responsePanel, true);
+        dialogueName.SetText(currentDialogue.suspectName);
+
+        if (currentDialogue.evidenceResponseNumber == 2)
+        {
+            PersistenceSingleton.Instance.AddNewItem(currentDialogue.reward);
+        }
     }
 
     public void Question3Asked()
     {
-        dialogueOption1.SetText("");
-        dialogueOption2.SetText("");
-        dialogueOption3.SetText("");
         dialogueResponse.SetText(currentDialogue.response3);
-        toggleButtonPanel(false);
+        toggleGroup(questionPanel, false);
+        toggleGroup(responsePanel, true);
+        dialogueName.SetText(currentDialogue.suspectName);
+
+        if (currentDialogue.evidenceResponseNumber == 3)
+        {
+            PersistenceSingleton.Instance.AddNewItem(currentDialogue.reward);
+        }
     }
 
 
@@ -112,16 +146,19 @@ public class DialogueControl : MonoBehaviour
         dialogueOption2.SetText("");
         dialogueOption3.SetText("");
         playerInput.SwitchCurrentActionMap("Player");
-        dialogueCanvas.enabled = false;
-        toggleButtonPanel(false);
+        dialogueCanvas.gameObject.SetActive(false); ;
 
     }
 
-    private void toggleButtonPanel(bool enable)
+    private void toggleGroup(GameObject group, bool enable)
     {
-        var btns = questionPanel.GetComponentsInChildren<Button>(true);
-        Debug.Log("Toggling " + btns.Length + " buttons to " + enable);
-        foreach (Button btn in btns)
+        var buttonPanelThings = group.GetComponentsInChildren<Button>(true);
+        foreach (Button btn in buttonPanelThings)
+        {
+            btn.gameObject.SetActive(enable);
+        }
+        var textThings = group.GetComponentsInChildren<TMP_Text>(true);
+        foreach (TMP_Text btn in textThings)
         {
             btn.gameObject.SetActive(enable);
         }
