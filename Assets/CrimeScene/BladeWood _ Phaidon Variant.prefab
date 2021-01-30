@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4113448159268880123
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: reward
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question1
+      value: You play here often?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question2
+      value: 'Know of any person that got Dirt on their stick? '
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question3
+      value: Ever got bad experiences while working here?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response1
+      value: Two or three times a week if I get the opportunity even more. The pay
+        is pretty good.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response2
+      value: "\u2026 Do you know of the Person in the Bathroom? The Weeping one\u2026
+        They used to be in a Relationship with the Victim."
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response3
+      value: "Nah\u2026 Was always one of the better bars I work at."
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: suspectName
+      value: Phaidon
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: introduction
+      value: What is it? I really want to pack up my stuff and go home.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: questionPrefix
+      value: It will not take long if you cooperate.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: evidenceResponseNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 695384575228885646, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_Name
+      value: BladeWood _ Phaidon Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.801596
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6514223
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}

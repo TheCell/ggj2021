@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8564230484445479882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: reward
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question1
+      value: Were you the only one on shift today?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question2
+      value: Did you talk to the victim this evening?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question3
+      value: I heard you are one of the best Bartenders around.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response1
+      value: Actually yes. The other Barkeeper called in sick, so I had to take their
+        shift as well.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response2
+      value: "He was at the bar almost the whole evening\u2026 though head in the
+        clouds if you know what I mean."
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response3
+      value: "Hehe\u2026 you heard right about that!"
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: suspectName
+      value: Jan
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: introduction
+      value: You have something to ask me mate?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: questionPrefix
+      value: Yeah, if you do not mind
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: evidenceResponseNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 695384575228885646, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_Name
+      value: The Jorki _ Jan Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.6593094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0161788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}

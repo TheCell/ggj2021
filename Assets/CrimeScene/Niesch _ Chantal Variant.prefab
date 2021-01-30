@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2523130047427183664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: reward
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question1
+      value: Was it a busy evening today?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question2
+      value: Seen anyone touching pockets they should not?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: question3
+      value: Do you have a good Relationship with your colleagues?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response1
+      value: 'It was ok. Could have been worse but '
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response2
+      value: Except the Bouncer. She always palpates customers when they go through
+        the door.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: response3
+      value: Yeah, pretty good If I am honest.
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: suspectName
+      value: Chantal
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: introduction
+      value: Got something to pick up? Or what is it?
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: questionPrefix
+      value: Not really, I wanted to ask some questions
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: evidenceResponseNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 695384575228885646, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_Name
+      value: Niesch _ Chantal Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.817583
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9977756
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143967401507308454, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}

@@ -63,7 +63,11 @@ public class CrimeSceneControl : MonoBehaviour
             Debug.Log("Did not find a player input in this object!");
         }
 
-        dialogueControl = FindObjectOfType<DialogueControl>();
+        dialogueControl = FindObjectOfType<DialogueControl>(true);
+        if (dialogueControl == null)
+        {
+            Debug.Log("Did not find a dialog control object!");
+        }
     }
 
     // Update is called once per frame
