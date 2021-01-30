@@ -95,6 +95,7 @@ public class DialogueControl : MonoBehaviour
 
     public void goToQuestions()
     {
+        dialogueName.SetText("Detective");
         toggleGroup(questionPanel, true);
         toggleGroup(responsePanel, false);
     }
@@ -104,6 +105,7 @@ public class DialogueControl : MonoBehaviour
         dialogueResponse.SetText(currentDialogue.response1);
         toggleGroup(questionPanel, false);
         toggleGroup(responsePanel, true);
+        dialogueName.SetText(currentDialogue.suspectName);
     }
 
     public void Question2Asked()
@@ -111,6 +113,7 @@ public class DialogueControl : MonoBehaviour
         dialogueResponse.SetText(currentDialogue.response2);
         toggleGroup(questionPanel, false);
         toggleGroup(responsePanel, true);
+        dialogueName.SetText(currentDialogue.suspectName);
     }
 
     public void Question3Asked()
@@ -118,6 +121,7 @@ public class DialogueControl : MonoBehaviour
         dialogueResponse.SetText(currentDialogue.response3);
         toggleGroup(questionPanel, false);
         toggleGroup(responsePanel, true);
+        dialogueName.SetText(currentDialogue.suspectName);
     }
 
 
