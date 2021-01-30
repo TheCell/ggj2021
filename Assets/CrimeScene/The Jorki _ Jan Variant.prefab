@@ -102,8 +102,8 @@ MonoBehaviour:
   question3: I heard you are one of the best Bartenders around.
   response1: Actually yes. The other Barkeeper called in sick, so I had to take their
     shift as well.
-  response2: "He was at the bar almost the whole evening\u2026 though head in the
-    clouds if you know what I mean."
+  response2: "He was at the bar almost the whole evening\u2026 though <b>head in
+    the clouds</b>, if you know what I mean."
   response3: "Hehe\u2026 you heard right about that!"
   questionPrefix: Yeah, if you do not mind
   suspectName: Jan

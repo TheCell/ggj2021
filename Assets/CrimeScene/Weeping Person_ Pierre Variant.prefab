@@ -103,7 +103,7 @@ MonoBehaviour:
   response1: I-it is ok. I am fine. Nothing you could do about anyway. It's just
     that no one knows my name is actually Perry!
   response2: I arrived around 7 pm *sniff* a-and was here since.
-  response3: 'Uh.. the wardrobe attendant was absent for quite some time. '
+  response3: 'Uh.. <b>the wardrobe attendant was absent for quite some time</b>. '
   questionPrefix: Sorry to interrupt, I have some Questions
   suspectName: Pierre
   evidenceResponseNumber: 3

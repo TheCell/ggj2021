@@ -214,7 +214,7 @@ MonoBehaviour:
   dialoguePrefix: {fileID: 0}
   dialogueResponse: {fileID: 0}
   dialogueName: {fileID: 0}
-  dialogueCanvas: {fileID: 0}
+  dialogueCanvas: {fileID: 3987812190027153887}
   questionPanel: {fileID: 3987812189125393787}
   responsePanel: {fileID: 3987812188095964775}
   currentDialogue: {fileID: 0}

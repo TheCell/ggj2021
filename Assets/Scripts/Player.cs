@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _comUIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _comUIManager = GameObject.Find("InventoryCanvas").GetComponent<UIManager>();
     }
 
     // Update is called once per frame

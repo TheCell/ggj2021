@@ -103,7 +103,7 @@ MonoBehaviour:
   response1: Two or three times a week if I get the opportunity even more. The pay
     is pretty good.
   response2: "\u2026 Do you know of the Person in the Bathroom? The Weeping one\u2026
-    They used to be in a Relationship with the Victim."
+    <b>They used to be in a Relationship with the Victim</b>."
   response3: "Nah\u2026 Was always one of the better bars I work at."
   questionPrefix: It will not take long if you cooperate.
   suspectName: Phaidon

@@ -100,8 +100,8 @@ MonoBehaviour:
   question1: Are there any noticeable costumers?
   question2: You like working here?
   question3: Do you do your work responsibly?
-  response1: "Except for the Drunk Guy\u2026 he is always drunk who knows what he
-    is up to."
+  response1: "Except for the Drunk Guy\u2026 <b>he is always drunk</b>, who knows
+    what he is up to."
   response2: "Mh\u2026 the pay is not half bad. That is about it."
   response3: What is that supposed to mean?!
   questionPrefix: I have some questions for you.
