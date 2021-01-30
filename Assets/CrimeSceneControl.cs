@@ -85,36 +85,69 @@ public class CrimeSceneControl : MonoBehaviour
 
     public void MoveTo(InputAction.CallbackContext context)
     {
-       
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+        // Scoped to handle item pickup, cause I'm lazy as f
+        {
+            // this will only work for BoxCollider 3d for now. It's too late to get shit done otherwise
+            // also you have to move the mouse a tiny bit while pressing left mouse button down
+            Vector3 mouseScreenPos = Mouse.current.position.ReadValue();
+            mouseScreenPos.z = 0;
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(mouseScreenPos);
 
-        RaycastHit2D hit2d = Physics2D.Raycast(mousePos2D, Vector2.zero);
-        if (hit2d.collider != null)
-        {
-            Debug.Log("You clicked on 2d " + hit2d.collider.gameObject.name);
-            interactionTarget = hit2d.collider.gameObject;
-        } else
-        {
-            Debug.Log("The point  " + mousePos2D + " is empty");
-     
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log("mouseWorldPos The point  " + mouseScreenPos + " is hit!");
+                var item = hit.transform.GetComponent<Item>();
+                if (item != null)
+                {
+                    Debug.Log("Item Picku!  ");
+                    item.PickUp();
+                    return; // We don't want to move if we clicked on an item.
+                }
+                else
+                {
+                    Debug.Log("Not an Item!  ");
+                }
+            } else
+            {
+                Debug.Log("mouseWorldPos The point  " + mouseScreenPos + " is emptyu!");
+            }
+
         }
 
-
-        // Convert the Mouse current position in the screen to the current position in the world
-        destination = mouseWorldPos;
-        // The z value is not useful here, we set to 0
-        destination.z = 0;
-
-        // If the destination is to the left, flip the sprite to the left, and vice versa
-        // Depending on the animations we have, this might get replaced
-        if (destination.x < player.transform.position.x)
+        // Scoped to handle dialogues, cause I'm lazy as f
         {
-            spriteRenderer.flipX = false;
-        }
-        else
-        {
-            spriteRenderer.flipX = true;
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+
+            RaycastHit2D hit2d = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            if (hit2d.collider != null)
+            {
+                Debug.Log("You clicked on 2d " + hit2d.collider.gameObject.name);
+                interactionTarget = hit2d.collider.gameObject;
+            }
+            else
+            {
+                Debug.Log("The point  " + mousePos2D + " is empty");
+
+            }
+
+
+            // Convert the Mouse current position in the screen to the current position in the world
+            destination = mouseWorldPos;
+            // The z value is not useful here, we set to 0
+            destination.z = 0;
+
+            // If the destination is to the left, flip the sprite to the left, and vice versa
+            // Depending on the animations we have, this might get replaced
+            if (destination.x < player.transform.position.x)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
         }
     }
 

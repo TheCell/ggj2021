@@ -29,7 +29,10 @@ public class DialogueControl : MonoBehaviour
     {
 
         playerInput = FindObjectOfType<PlayerInput>();
-        dialogueCanvas = FindObjectOfType<Canvas>();
+        if (dialogueCanvas == null)
+        {
+            dialogueCanvas = FindObjectOfType<Canvas>();
+        }
 
         var texts = FindObjectsOfType<TMP_Text>();
         if (dialogueOption1 == null)

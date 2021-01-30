@@ -21,7 +21,7 @@ public class Item : MonoBehaviour
 
     public void PickUp()
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
+        Player player = GameObject.Find("Detective").GetComponent<Player>();
         player.AddCollectible(_itemID);
 
         switch (_itemID)
