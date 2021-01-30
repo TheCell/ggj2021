@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,15 +11,23 @@ public class CrimeSceneControl : MonoBehaviour
     public Vector3 destination;
     public GameObject player;
     public SpriteRenderer spriteRenderer;
+    PlayerInput playerInput;
 
     private GameObject interactionTarget;
+    private GameObject currentlyInteractingWith;
+
+    public DialogueControl dialogueControl;
+
+    public TMP_Text dialogueOption1;
+    public TMP_Text dialogueOption2;
+    public TMP_Text dialogueOption3;
 
     // Start is called before the first frame update
     void Start()
     {
         destination = player.transform.position;
 
-        PlayerInput playerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
             InputActionMap inputActionMap = null;
@@ -54,7 +63,7 @@ public class CrimeSceneControl : MonoBehaviour
             Debug.Log("Did not find a player input in this object!");
         }
 
-
+        dialogueControl = FindObjectOfType<DialogueControl>();
     }
 
     // Update is called once per frame
@@ -113,9 +122,12 @@ public class CrimeSceneControl : MonoBehaviour
             Dialogue otherDialogue = collision.gameObject.GetComponent<Dialogue>();
             if (otherDialogue != null)
             {
-                otherDialogue.speakTo();
+                dialogueControl.ActivateDialogue(otherDialogue);
+                currentlyInteractingWith = interactionTarget;
+                playerInput.SwitchCurrentActionMap("UI");
+                destination = player.transform.position;
             }
         }
     }
-
+    
 }
