@@ -96,21 +96,12 @@ public class CrimeSceneControl : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("mouseWorldPos The point  " + mouseScreenPos + " is hit!");
                 var item = hit.transform.GetComponent<Item>();
                 if (item != null)
                 {
-                    Debug.Log("Item Picku!  ");
                     item.PickUp();
                     return; // We don't want to move if we clicked on an item.
                 }
-                else
-                {
-                    Debug.Log("Not an Item!  ");
-                }
-            } else
-            {
-                Debug.Log("mouseWorldPos The point  " + mouseScreenPos + " is emptyu!");
             }
 
         }
@@ -123,13 +114,7 @@ public class CrimeSceneControl : MonoBehaviour
             RaycastHit2D hit2d = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit2d.collider != null)
             {
-                Debug.Log("You clicked on 2d " + hit2d.collider.gameObject.name);
                 interactionTarget = hit2d.collider.gameObject;
-            }
-            else
-            {
-                Debug.Log("The point  " + mousePos2D + " is empty");
-
             }
 
 
@@ -153,8 +138,6 @@ public class CrimeSceneControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("You collided with " + collision.gameObject.name);
-
         if (collision.gameObject == interactionTarget) { 
             Dialogue otherDialogue = collision.gameObject.GetComponent<Dialogue>();
             if (otherDialogue != null)

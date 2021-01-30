@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public readonly ItemTypes itemType;
+    [SerializeField]
+    private ItemTypes itemType;
 
     [SerializeField]
     private AudioClip[] _FXClip; 
