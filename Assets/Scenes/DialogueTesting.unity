@@ -218,6 +218,10 @@ PrefabInstance:
       value: Biff
       objectReference: {fileID: 0}
     - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: reward
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
       propertyPath: question1
       value: Are you my mommy?
       objectReference: {fileID: 0}
@@ -252,6 +256,10 @@ PrefabInstance:
     - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
       propertyPath: questionPrefix
       value: Certainly...
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: evidenceResponseNumber
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 695384575228885646, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
       propertyPath: m_Name
@@ -452,6 +460,10 @@ PrefabInstance:
     - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
       propertyPath: questionPrefix
       value: I think you are, so I have a question or two...
+      objectReference: {fileID: 0}
+    - target: {fileID: -3508618776039806117, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
+      propertyPath: evidenceResponseNumber
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 695384575228885646, guid: 3ff8e3819b4b41144a9c191672e1e051, type: 3}
       propertyPath: m_Name
