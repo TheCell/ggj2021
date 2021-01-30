@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
+using UnityEngine.InputSystem;
 
 public class Dialogue : MonoBehaviour
 {
@@ -12,11 +15,10 @@ public class Dialogue : MonoBehaviour
     public string response1;
     public string response2;
     public string response3;
-
     // Start is called before the first frame update
     void Start()
     {
-        this.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -24,11 +26,4 @@ public class Dialogue : MonoBehaviour
     {
         
     }
-
-    public void speakTo()
-    {
-        print("Option 1: " + question1);
-        print("Option 2: " + question2);
-        print("Option 3: " + question3);
-    }
-}
+ }
