@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8379268420479779047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9218701, y: -0.9746644, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2011063170278844112}
@@ -146,8 +146,20 @@ MonoBehaviour:
     itemType: 11
   - sprite: {fileID: 21300000, guid: bb9e329cca6865945a4229413a5dc760, type: 3}
     itemType: 12
-  - sprite: {fileID: 21300000, guid: 2f49483e6a0a34949ac2bd2d25db809c, type: 3}
-    itemType: 13
+  - sprite: {fileID: 21300000, guid: cdcfd4c52356ad84a81f6382efbdb7e7, type: 3}
+    itemType: 0
+  - sprite: {fileID: 21300000, guid: acf5f9b2c88eb314cbcf59880131bb44, type: 3}
+    itemType: 1
+  - sprite: {fileID: 21300000, guid: cebc1bb3fb4fc35408fc9b8f269d8516, type: 3}
+    itemType: 2
+  - sprite: {fileID: 21300000, guid: d77e84c0ce236a64a8f579915b30a4a9, type: 3}
+    itemType: 3
+  - sprite: {fileID: 21300000, guid: 9c23871875dd2734c9e16b51c1f0bce2, type: 3}
+    itemType: 4
+  - sprite: {fileID: 21300000, guid: 7f62a8d6d3cfa264eaa75ff29048bdb1, type: 3}
+    itemType: 5
+  - sprite: {fileID: 21300000, guid: 2f8afd9592fc4eb439ee8d23ccedb856, type: 3}
+    itemType: 6
 --- !u!65 &8379268420479779044
 BoxCollider:
   m_ObjectHideFlags: 0
