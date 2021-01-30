@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackgroundMusicManager : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class BackgroundMusicManager : MonoBehaviour
         switchingStartedTime = Time.time;
         fadingIn = SceneAudioSource;
         fadingIn.volume = 1;
+
+        SceneManager.activeSceneChanged += SceneChanged;
     }
 
     private void PrepareToSwitchTrackAndSwitch(ActiveMusic switchTo)
@@ -79,6 +82,11 @@ public class BackgroundMusicManager : MonoBehaviour
         }
         
         StartCoroutine("Fade");
+    }
+
+    private void SceneChanged(Scene oldScene, Scene newScene)
+    {
+        //if (newScene.name)
     }
 
     IEnumerator Fade()
