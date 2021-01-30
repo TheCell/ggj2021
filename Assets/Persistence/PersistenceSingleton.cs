@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public sealed class PersistenceSingleton
 {
     private static PersistenceSingleton instance = null;
 
-    public static HashSet<ItemTypes> FoundItems
+    public HashSet<ItemTypes> FoundItems
     {
         get { return foundItems;  }
     }
