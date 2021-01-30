@@ -106,7 +106,7 @@ MonoBehaviour:
   response2: Mostly with the Bartender, I did not dare to talk to those creeps in
     the bathroom.
   response3: "Eh\u2026 it has been better. The cellist was very inconsistent today,
-    kept messing up the pieces he played. \u2026 he did seem kind of nervous."
+    kept messing up the pieces he played. \u2026<b> he did seem kind of nervous</b>."
   questionPrefix: "I just have some direct questions I would like to ask\u2026"
   suspectName: Simon
   evidenceResponseNumber: 3

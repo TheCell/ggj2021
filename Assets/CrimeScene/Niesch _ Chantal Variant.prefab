@@ -101,8 +101,8 @@ MonoBehaviour:
   question2: Seen anyone touching pockets they should not?
   question3: Do you have a good Relationship with your colleagues?
   response1: 'It was ok. Could have been worse but '
-  response2: Except the Bouncer. She always palpates customers when they go through
-    the door.
+  response2: Except the Bouncer. <b>She always palpates customers</b> when they go
+    through the door.
   response3: Yeah, pretty good If I am honest.
   questionPrefix: Not really, I wanted to ask some questions
   suspectName: Chantal

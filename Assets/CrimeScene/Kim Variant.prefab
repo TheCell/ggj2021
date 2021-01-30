@@ -103,8 +103,8 @@ MonoBehaviour:
   response1: "Always\u2026 it is my favorite place\u2026 they do not kick me out
     like the other bars."
   response2: "They are nice\u2026 I like them."
-  response3: Hey pssssht. The bartender is always complaining about his small salary.
-    He does not like being around these rich customers.
+  response3: Hey pssssht. <b>The bartender is always complaining about his small
+    salary</b>. He does not like being around these rich customers.
   questionPrefix: I will not send you home mister. I want to ask some questions.
   suspectName: Kim
   evidenceResponseNumber: 3
