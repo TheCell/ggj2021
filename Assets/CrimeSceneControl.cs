@@ -123,8 +123,7 @@ public class CrimeSceneControl : MonoBehaviour
             RaycastHit2D[] hit2dList = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
             foreach (RaycastHit2D hit2d in hit2dList)
             {
-                if (hit2d.collider != null && hit2d.collider.gameObject != this.gameObject)
-                {
+                if (hit2d.collider.gameObject != this.gameObject && hit2d.collider.gameObject.name != "WalkableArea") {
                     interactionTarget = hit2d.collider.gameObject;
                 }
             }
