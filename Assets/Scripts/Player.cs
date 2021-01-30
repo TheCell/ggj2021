@@ -11,6 +11,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         _comUIManager = GameObject.Find("InventoryCanvas").GetComponent<UIManager>();
+        
+        foreach(ItemTypes item in PersistenceSingleton.Instance.FoundItems)
+        {
+            AddCollectible(item);
+        }
     }
 
     // Update is called once per frame
@@ -47,7 +52,6 @@ public class Player : MonoBehaviour
                 _comUIManager.DisplayItemSeven();
                 break;
             default:
-                Debug.Log("Default value");
                 break;
         }
     }

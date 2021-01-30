@@ -11,7 +11,10 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PersistenceSingleton.Instance.FoundItems.Contains(itemType))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame
