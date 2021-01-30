@@ -86,7 +86,21 @@ public class BackgroundMusicManager : MonoBehaviour
 
     private void SceneChanged(Scene oldScene, Scene newScene)
     {
-        //if (newScene.name)
+        if (oldScene == null)
+        {
+            return;
+        }
+
+        switch(newScene.buildIndex)
+        {
+            case 5:
+                // Bulletin board
+                ActiveMusic = ActiveMusic.BillboardTrack;
+                break;
+            default:
+                ActiveMusic = ActiveMusic.GameTrack;
+                break;
+        }
     }
 
     IEnumerator Fade()
