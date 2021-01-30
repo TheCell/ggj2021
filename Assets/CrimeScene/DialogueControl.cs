@@ -106,6 +106,11 @@ public class DialogueControl : MonoBehaviour
         toggleGroup(questionPanel, false);
         toggleGroup(responsePanel, true);
         dialogueName.SetText(currentDialogue.suspectName);
+
+        if (currentDialogue.evidenceResponseNumber == 1)
+        {
+            PersistenceSingleton.Instance.AddNewItem(currentDialogue.reward);
+        }
     }
 
     public void Question2Asked()
@@ -114,6 +119,11 @@ public class DialogueControl : MonoBehaviour
         toggleGroup(questionPanel, false);
         toggleGroup(responsePanel, true);
         dialogueName.SetText(currentDialogue.suspectName);
+
+        if (currentDialogue.evidenceResponseNumber == 2)
+        {
+            PersistenceSingleton.Instance.AddNewItem(currentDialogue.reward);
+        }
     }
 
     public void Question3Asked()
@@ -122,6 +132,11 @@ public class DialogueControl : MonoBehaviour
         toggleGroup(questionPanel, false);
         toggleGroup(responsePanel, true);
         dialogueName.SetText(currentDialogue.suspectName);
+
+        if (currentDialogue.evidenceResponseNumber == 3)
+        {
+            PersistenceSingleton.Instance.AddNewItem(currentDialogue.reward);
+        }
     }
 
 
@@ -138,13 +153,11 @@ public class DialogueControl : MonoBehaviour
     private void toggleGroup(GameObject group, bool enable)
     {
         var buttonPanelThings = group.GetComponentsInChildren<Button>(true);
-        Debug.Log("Toggling " + buttonPanelThings.Length + " buttons to " + enable);
         foreach (Button btn in buttonPanelThings)
         {
             btn.gameObject.SetActive(enable);
         }
         var textThings = group.GetComponentsInChildren<TMP_Text>(true);
-        Debug.Log("Toggling " + buttonPanelThings.Length + " textThings to " + enable);
         foreach (TMP_Text btn in textThings)
         {
             btn.gameObject.SetActive(enable);

@@ -22,6 +22,10 @@ public class Dialogue : MonoBehaviour
 
     public string suspectName;
 
+    public int evidenceResponseNumber;
+
+    public ItemTypes reward;
+
     // Start is called before the first frame update
     void Start()
     {
