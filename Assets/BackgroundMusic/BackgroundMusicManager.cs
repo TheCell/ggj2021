@@ -33,7 +33,11 @@ public class BackgroundMusicManager : MonoBehaviour
     [SerializeField]
     private AudioSource BillboardAudioSource;
     [SerializeField]
+    private AudioSource CreditsAudioSource;
+    [SerializeField]
     private float switchTime = 1f;
+    [SerializeField]
+    private float soundVolume = .2f;
 
     private float switchingStartedTime;
     private bool trackSwitched = true;
@@ -61,15 +65,20 @@ public class BackgroundMusicManager : MonoBehaviour
         {
             Debug.LogError("missing BillboardAudioSource");
         }
+        if (CreditsAudioSource == null)
+        {
+            Debug.LogError("missing CreditsAudioSource");
+        }
 
         GameTrackAudioSource.volume = 0f;
         BarTrackAudioSource.volume = 0f;
         ToilettTrackAudioSource.volume = 0f;
         BillboardAudioSource.volume = 0f;
+        CreditsAudioSource.volume = 0f;
 
         switchingStartedTime = Time.time;
         fadingIn = GameTrackAudioSource;
-        fadingIn.volume = .5f;
+        fadingIn.volume = soundVolume;
 
         SceneManager.activeSceneChanged += SceneChanged;
     }
@@ -95,7 +104,7 @@ public class BackgroundMusicManager : MonoBehaviour
                 fadingIn = BarTrackAudioSource;
                 break;
             case ActiveMusic.GameEndTrack:
-                fadingIn = GameTrackAudioSource;
+                fadingIn = CreditsAudioSource;
                 break;
         }
 
@@ -140,10 +149,10 @@ public class BackgroundMusicManager : MonoBehaviour
                 ActiveMusic = ActiveMusic.BillboardTrack;
                 break;
             case 6: // Game end
-                ActiveMusic = ActiveMusic.BillboardTrack;
+                ActiveMusic = ActiveMusic.GameEndTrack;
                 break;
             case 7: // Credit
-                ActiveMusic = ActiveMusic.BillboardTrack;
+                ActiveMusic = ActiveMusic.GameEndTrack;
                 break;
             default:
                 ActiveMusic = ActiveMusic.GameTrack;
@@ -159,15 +168,15 @@ public class BackgroundMusicManager : MonoBehaviour
         while (Time.time < finishtime)
         {
             t = (Time.time - switchingStartedTime) / (finishtime - switchingStartedTime);
-            fadingOut.volume = (1 - t) * .5f;
-            fadingIn.volume = t * .5f;
+            fadingOut.volume = (1 - t) * soundVolume;
+            fadingIn.volume = t * soundVolume;
 
             yield return null;
         }
 
 
         fadingOut.volume = 0;
-        fadingIn.volume = .5f;
+        fadingIn.volume = soundVolume;
 
         trackSwitched = true;
     }
