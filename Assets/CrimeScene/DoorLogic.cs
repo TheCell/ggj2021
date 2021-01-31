@@ -27,8 +27,15 @@ public class DoorLogic : MonoBehaviour
         
     }
 
-    private void OnClick(InputAction.CallbackContext contex)
+    private void OnClick(InputAction.CallbackContext context)
     {
+        float click = context.ReadValue<float>();
+        var clickPressed = click > 0.1f ? true : false;
+        if (!clickPressed)
+        {
+            return;
+        }
+
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
         
