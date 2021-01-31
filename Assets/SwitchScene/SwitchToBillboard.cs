@@ -14,7 +14,7 @@ public class SwitchToBillboard : MonoBehaviour
 
     public void Start()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
 
         SceneManager.activeSceneChanged += OnSceneChanged;
 
