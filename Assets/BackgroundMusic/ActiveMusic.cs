@@ -2,6 +2,8 @@
 public enum ActiveMusic
 {
     GameTrack,
-    DialogueTrack,
-    BillboardTrack
+    BillboardTrack,
+    ToiletTrack,
+    GameEndTrack,
+    BarTrack,
 }

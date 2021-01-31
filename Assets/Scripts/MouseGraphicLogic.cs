@@ -18,9 +18,22 @@ public class MouseGraphicLogic : MonoBehaviour
     private InputAction _uiDragActionHandle;
     private InputAction _playerDragActionHandle;
 
+
+    private Canvas _dialogueCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
+        _dialogueCanvas = Array.Find(FindObjectsOfType<Canvas>(true), canvas => canvas.name == "DialogueCanvas");
+        if (_dialogueCanvas == null)
+        {
+            Debug.Log("Did not find a dialogue canvas, cursor images may change during the dialogue.");
+            String listOfCanvases = "";
+            foreach (var canvas in FindObjectsOfType<Canvas>()) {
+                listOfCanvases += " " + canvas.name;
+            }
+            Debug.Log("Found canvases = " + listOfCanvases);
+        }
     }
 
     private void OnDestroy()
@@ -30,6 +43,12 @@ public class MouseGraphicLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (_dialogueCanvas != null && _dialogueCanvas.isActiveAndEnabled)
+        {
+            SetCursorIfNotSet(pointTexture, pointHotSpot);
+            return;
+        }
         // Scoped to handle item pickup, cause I'm lazy as f
         {
             // this will only work for BoxCollider 3d for now. It's too late to get shit done otherwise
@@ -43,7 +62,7 @@ public class MouseGraphicLogic : MonoBehaviour
             {
                 if (hit.transform.GetComponent<Item>() != null)
                 {
-                    Cursor.SetCursor(handTexture, handHotSpot, cursorMode);
+                    SetCursorIfNotSet(handTexture, handHotSpot);
                     return;
                 }
             }
@@ -60,19 +79,29 @@ public class MouseGraphicLogic : MonoBehaviour
             {
                 if (hit2d.collider.gameObject.GetComponent<Dialogue>() != null)
                 {
-                    Cursor.SetCursor(talkTexture, talkHotSpot, cursorMode);
+                    SetCursorIfNotSet(talkTexture, talkHotSpot);
                     return;
                 }
                 if (hit2d.collider.gameObject.GetComponent<DragDropItem>() != null)
                 {
-                    Cursor.SetCursor(handTexture, handHotSpot, cursorMode);
+                    SetCursorIfNotSet(handTexture, handHotSpot);
                     return;
                 }
             }
         }
-        Cursor.SetCursor(pointTexture, pointHotSpot, cursorMode);
+        SetCursorIfNotSet(pointTexture, pointHotSpot);
     }
 
+    private Texture2D lastSetTexture;
+
+    void SetCursorIfNotSet(Texture2D textureToSet, Vector2 textureHotspot)
+    {
+        if (lastSetTexture != textureToSet)
+        {
+            Cursor.SetCursor(textureToSet, textureHotspot, cursorMode);
+            lastSetTexture = textureToSet;
+        }
+    }
     
     
 }
