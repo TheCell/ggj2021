@@ -25,11 +25,17 @@ public class CrimeSceneControl : MonoBehaviour
 
     private InputAction moveToAction;
 
-    public bool isMoving;
+
+    [SerializeField]
+    private AudioClip[] _walkFX;
+    private AudioSource _audioSourceComponent;
+    private bool _isMoving;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        _audioSourceComponent = GetComponent<AudioSource>();
         collidingWith = new HashSet<GameObject>();
         destination = player.transform.position;
 
@@ -84,7 +90,13 @@ public class CrimeSceneControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(_isMoving == true)
+        {
+            if (_audioSourceComponent.isPlaying == false)
+            {
+                _audioSourceComponent.clip = _walkFX[UnityEngine.Random.Range(0, 3)];
+            }
+        }
     }
 
     // FixedUpdate is called on a fixed timestep
@@ -92,7 +104,10 @@ public class CrimeSceneControl : MonoBehaviour
     {
         // Moves the player transform position towards the destination at a given speed
         player.transform.position = Vector3.MoveTowards(player.transform.position, destination, 0.1f);
-        isMoving = Vector3.Distance(player.transform.position, destination) > 0.05;
+
+        _isMoving = Vector3.Distance(player.transform.position, destination) > 0.1f;
+
+
     }
 
     public void MoveTo(InputAction.CallbackContext context)

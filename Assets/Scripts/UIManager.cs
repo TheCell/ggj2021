@@ -7,17 +7,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject[] _itemSprites;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    private AudioClip[] _FXSounds;
+    
+ 
 
     public void DiplayItemOne()
     {

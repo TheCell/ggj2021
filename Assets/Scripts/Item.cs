@@ -59,13 +59,6 @@ public class Item : MonoBehaviour
         }
         // here we need AudioSource PickUp jingle
         Destroy(this.gameObject);
-
     }
-
-    
-
-
-
-    
 
 }
