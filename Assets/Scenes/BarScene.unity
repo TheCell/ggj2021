@@ -532,6 +532,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2274984609478614351, guid: 80c050a0db21eef46b192d7824ed0b53, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4545160595216406675, guid: 80c050a0db21eef46b192d7824ed0b53, type: 3}
       propertyPath: m_Name
       value: ItemKODrops
@@ -550,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911302935503261509, guid: 80c050a0db21eef46b192d7824ed0b53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.15
+      value: 2.015
       objectReference: {fileID: 0}
     - target: {fileID: 7911302935503261509, guid: 80c050a0db21eef46b192d7824ed0b53, type: 3}
       propertyPath: m_LocalPosition.y
