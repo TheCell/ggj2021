@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BillBoardItems
-    uniqueID: 2516658199
+  - name: Background
+    uniqueID: 755189863
+    locked: 0
+  - name: Playerground
+    uniqueID: 553066773
+    locked: 0
+  - name: Foreground
+    uniqueID: 223065145
     locked: 0

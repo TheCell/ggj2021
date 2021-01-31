@@ -15,6 +15,7 @@ public class CrimeSceneControl : MonoBehaviour
 
     private GameObject interactionTarget;
     private GameObject currentlyInteractingWith;
+    private HashSet<GameObject> collidingWith;
 
     public DialogueControl dialogueControl;
 
@@ -22,9 +23,12 @@ public class CrimeSceneControl : MonoBehaviour
     public TMP_Text dialogueOption2;
     public TMP_Text dialogueOption3;
 
+    private InputAction moveToAction;
+
     // Start is called before the first frame update
     void Start()
     {
+        collidingWith = new HashSet<GameObject>();
         destination = player.transform.position;
 
         playerInput = GetComponent<PlayerInput>();
@@ -43,14 +47,14 @@ public class CrimeSceneControl : MonoBehaviour
             {
                 var actions = inputActionMap.actions;
 
-                var action = Array.Find(actions.ToArray(), ele => ele.name.Equals("MoveTo"));
-                if (action == null)
+                moveToAction = Array.Find(actions.ToArray(), ele => ele.name.Equals("MoveTo"));
+                if (moveToAction == null)
                 {
                     Debug.Log("MoveTo was not found!");
                 }
                 else
                 {
-                    action.started += MoveTo;
+                    moveToAction.started += MoveTo;
                 }
                 
             } else
@@ -63,7 +67,16 @@ public class CrimeSceneControl : MonoBehaviour
             Debug.Log("Did not find a player input in this object!");
         }
 
-        dialogueControl = FindObjectOfType<DialogueControl>();
+        dialogueControl = FindObjectOfType<DialogueControl>(true);
+        if (dialogueControl == null)
+        {
+            Debug.Log("Did not find a dialog control object!");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        moveToAction.started -= MoveTo;
     }
 
     // Update is called once per frame
@@ -81,53 +94,95 @@ public class CrimeSceneControl : MonoBehaviour
 
     public void MoveTo(InputAction.CallbackContext context)
     {
-       
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+        // Scoped to handle item pickup, cause I'm lazy as f
+        {
+            // this will only work for BoxCollider 3d for now. It's too late to get shit done otherwise
+            // also you have to move the mouse a tiny bit while pressing left mouse button down
+            Vector3 mouseScreenPos = Mouse.current.position.ReadValue();
+            mouseScreenPos.z = 0;
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(mouseScreenPos);
 
-        RaycastHit2D hit2d = Physics2D.Raycast(mousePos2D, Vector2.zero);
-        if (hit2d.collider != null)
-        {
-            Debug.Log("You clicked on 2d " + hit2d.collider.gameObject.name);
-            interactionTarget = hit2d.collider.gameObject;
-        } else
-        {
-            Debug.Log("The point  " + mousePos2D + " is empty");
-     
+            if (Physics.Raycast(ray, out hit))
+            {
+                var item = hit.transform.GetComponent<Item>();
+                if (item != null)
+                {
+                    item.PickUp();
+                    return; // We don't want to move if we clicked on an item.
+                }
+            }
+
         }
 
-
-        // Convert the Mouse current position in the screen to the current position in the world
-        destination = mouseWorldPos;
-        // The z value is not useful here, we set to 0
-        destination.z = 0;
-
-        // If the destination is to the left, flip the sprite to the left, and vice versa
-        // Depending on the animations we have, this might get replaced
-        if (destination.x < player.transform.position.x)
+        // Scoped to handle dialogues and movement, cause I'm lazy as f
         {
-            spriteRenderer.flipX = true;
-        }
-        else
-        {
-            spriteRenderer.flipX = false;
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+
+            RaycastHit2D[] hit2dList = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
+            foreach (RaycastHit2D hit2d in hit2dList)
+            {
+                if (hit2d.collider.gameObject != this.gameObject && hit2d.collider.gameObject.name != "WalkableArea") {
+                    interactionTarget = hit2d.collider.gameObject;
+                }
+            }
+
+
+            // We want to move only if the ground is in the collider list
+            var walkableAreaHit = Array.Find(hit2dList, hit => hit.collider.gameObject.name == "WalkableArea");
+            if (walkableAreaHit.collider != null){
+                destination = mouseWorldPos;
+                // The z value is not useful here, we set to 0
+                destination.z = 0;
+            }
+            // If the destination is to the left, flip the sprite to the left, and vice versa
+            // Depending on the animations we have, this might get replaced
+            if (mouseWorldPos.x < player.transform.position.x)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+            checkAndExecuteDialogue();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("You collided with " + collision.gameObject.name);
+        collidingWith.Add(collision.gameObject);
+        checkAndExecuteDialogue();
+    }
 
-        if (collision.gameObject == interactionTarget) { 
-            Dialogue otherDialogue = collision.gameObject.GetComponent<Dialogue>();
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        collidingWith.Remove(collision.gameObject);
+        checkAndExecuteDialogue();
+    }
+
+    private bool checkAndExecuteDialogue()
+    {
+        if (interactionTarget == null)
+        {
+            return false;
+        }
+        if (collidingWith.Contains(interactionTarget))
+        {
+            Dialogue otherDialogue = interactionTarget.GetComponent<Dialogue>();
             if (otherDialogue != null)
             {
                 dialogueControl.ActivateDialogue(otherDialogue);
                 currentlyInteractingWith = interactionTarget;
                 playerInput.SwitchCurrentActionMap("UI");
                 destination = player.transform.position;
+                interactionTarget = null;
+                return true;
             }
         }
+        return false;
     }
     
 }
