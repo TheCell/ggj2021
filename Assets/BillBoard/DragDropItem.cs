@@ -72,13 +72,19 @@ public class DragDropItem : MonoBehaviour
             return;
         }
 
+        bool foundItemImage = false;
         for (int i = 0; i < allItemAndImages.Length; i++)
         {
             var itemAndImage = allItemAndImages[i];
             if (itemAndImage.itemType == _itemType)
             {
                 spriteRenderer.sprite = itemAndImage.sprite;
+                foundItemImage = true;
             }
+        }
+        if (!foundItemImage)
+        {
+            Debug.Log("Did not find a graphic for " + _itemType);
         }
     }
 
