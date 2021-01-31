@@ -83,15 +83,15 @@ public class BackgroundMusicManager : MonoBehaviour
         
         StartCoroutine("Fade");
     }
-
-    private void SceneChanged(Scene oldScene, Scene newScene)
+    
+    private void SceneChanged(Scene current, Scene next)
     {
-        if (oldScene == null)
+        if (current == null)
         {
             return;
         }
 
-        switch(newScene.buildIndex)
+        switch(next.buildIndex)
         {
             case 5:
                 // Bulletin board
