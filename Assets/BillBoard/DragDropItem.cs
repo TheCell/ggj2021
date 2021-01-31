@@ -36,7 +36,8 @@ public class DragDropItem : MonoBehaviour
     public void OnClick(InputAction.CallbackContext context)
     {
         objectTransformToDrag = null;
-        clickPressed = !clickPressed;
+        float click = context.ReadValue<float>();
+        clickPressed = click > 0.1f ? true : false;
     }
 
     public void OnDrag(InputAction.CallbackContext context)

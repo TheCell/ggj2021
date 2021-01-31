@@ -13,7 +13,7 @@ public class ItemManager : MonoBehaviour
 
     public void Start()
     {
-        if (_itemCompareFields == null)
+        if (_itemCompareFields.Count == 0)
         {
             var itemCompareFields = FindObjectsOfType<ItemCompareField>();
             _itemCompareFields.AddRange(itemCompareFields);
