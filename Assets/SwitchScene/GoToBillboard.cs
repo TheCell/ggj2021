@@ -1,12 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BackToScene : MonoBehaviour
+public class GoToBillboard : MonoBehaviour
 {
     private PlayerInput playerInput;
     private InputActionMap inputActionMap;
 
-    public void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         SetupInputAction();
     }
@@ -16,18 +19,12 @@ public class BackToScene : MonoBehaviour
         Vector2 mousePos2D = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         RaycastHit2D[] hit2dList = Physics2D.RaycastAll(mousePos2D, Vector2.zero);
-        var playerWantsToGoToScene = false;
         foreach (RaycastHit2D hit2d in hit2dList)
         {
             if (hit2d.collider.gameObject == this.gameObject)
             {
-                playerWantsToGoToScene = true;
+                SwitchToBillboardNew.SwitchToBillboard();
             }
-        }
-
-        if (playerWantsToGoToScene)
-        {
-            SwitchToBillboardNew.SwitchToScene();
         }
     }
 
@@ -40,7 +37,7 @@ public class BackToScene : MonoBehaviour
             var actionMaps = playerInput.actions.actionMaps;
             foreach (var map in actionMaps)
             {
-                if (map.name.Equals("UI"))
+                if (map.name.Equals("Player"))
                 {
                     inputActionMap = map;
                 }
@@ -52,7 +49,7 @@ public class BackToScene : MonoBehaviour
             var actions = inputActionMap.actions;
             foreach (var action in actions)
             {
-                if (action.name.Equals("Click"))
+                if (action.name.Equals("MoveTo"))
                 {
                     action.performed += OnClick;
                 }
@@ -67,7 +64,7 @@ public class BackToScene : MonoBehaviour
             var actions = inputActionMap.actions;
             foreach (var action in actions)
             {
-                if (action.name.Equals("Click"))
+                if (action.name.Equals("MoveTo"))
                 {
                     action.performed -= OnClick;
                 }
