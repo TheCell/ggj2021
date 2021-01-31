@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ItemCompareField : MonoBehaviour
 {
+    public bool allEvidenceCorrect = false;
+
     [SerializeField]
     private List<ItemTypes> itemTypesToSolve = new List<ItemTypes>();
     private List<DragDropItem> currentEvidence = new List<DragDropItem>();
@@ -33,6 +35,7 @@ public class ItemCompareField : MonoBehaviour
         }
 
         currentEvidence.Remove(dragDropItem);
+        CompareEvidence();
     }
 
     private void CompareEvidence()
@@ -61,7 +64,12 @@ public class ItemCompareField : MonoBehaviour
 
         if (hasAllEvidence)
         {
+            allEvidenceCorrect = true;
             Debug.Log("The evidence is correct!");
+        }
+        else
+        {
+            allEvidenceCorrect = false;
         }
     }
 }
