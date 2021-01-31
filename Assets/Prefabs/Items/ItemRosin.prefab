@@ -98,10 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 4
   _FXClip:
-  - {fileID: 8300000, guid: 3285f59f931b8554fba42560b0b15b20, type: 3}
-  - {fileID: 8300000, guid: fa86d3c0ee0f8b1489eef9ce891268d3, type: 3}
+  - {fileID: 8300000, guid: e119a01df57ac1c4dacf6d1247d131ec, type: 3}
+  - {fileID: 8300000, guid: f2288e3b03f03d848abac6a4bac84751, type: 3}
   - {fileID: 8300000, guid: da874223134180141bd03c0055b30c5e, type: 3}
-  - {fileID: 8300000, guid: 09896b90aa98af7428f6f8947cbdb9df, type: 3}
+  - {fileID: 8300000, guid: a777bc9a835e748498fb3094ce99dd06, type: 3}
   - {fileID: 8300000, guid: e7e02fade236c0d4aa57cd4ca70f5b5a, type: 3}
   - {fileID: 8300000, guid: 6cabf613bd251e4479079208cc288329, type: 3}
   - {fileID: 8300000, guid: dcb0caab51da03d49b77f51af3c44506, type: 3}
