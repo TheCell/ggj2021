@@ -9,25 +9,31 @@ public class BackgroundMusicManager : MonoBehaviour
         get { return activeMusic; }
         set
         {
-            activeMusic = value;
-
-            if (trackSwitched)
+            if (activeMusic != value)
             {
-                PrepareToSwitchTrackAndSwitch(value);
+                activeMusic = value;
+
+                if (trackSwitched)
+                {
+                    PrepareToSwitchTrackAndSwitch(value);
+                }
             }
         }
     }
 
-    [SerializeField]
     private ActiveMusic activeMusic = ActiveMusic.GameTrack;
+    //[SerializeField]
+    //private AudioSource DialogueAudioSource;
     [SerializeField]
-    private AudioSource DialogueAudioSource;
+    private AudioSource GameTrackAudioSource;
+    [SerializeField]
+    private AudioSource BarTrackAudioSource;
+    [SerializeField]
+    private AudioSource ToilettTrackAudioSource;
     [SerializeField]
     private AudioSource BillboardAudioSource;
     [SerializeField]
-    private AudioSource SceneAudioSource;
-    [SerializeField]
-    private float switchTime = 3f;
+    private float switchTime = 1f;
 
     private float switchingStartedTime;
     private bool trackSwitched = true;
@@ -39,25 +45,31 @@ public class BackgroundMusicManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
-        if (DialogueAudioSource == null)
+        if (GameTrackAudioSource == null)
         {
-            Debug.LogError("missing DialogueAudioSource");
+            Debug.LogError("missing GameTrackAudioSource");
+        }
+        if (BarTrackAudioSource == null)
+        {
+            Debug.LogError("missing BarTrackAudioSource");
+        }
+        if (ToilettTrackAudioSource == null)
+        {
+            Debug.LogError("missing ToilettTrackAudioSource");
         }
         if (BillboardAudioSource == null)
         {
             Debug.LogError("missing BillboardAudioSource");
         }
-        if (SceneAudioSource == null)
-        {
-            Debug.LogError("missing SceneAudioSource");
-        }
 
-        DialogueAudioSource.volume = 0f;
+        GameTrackAudioSource.volume = 0f;
+        BarTrackAudioSource.volume = 0f;
+        ToilettTrackAudioSource.volume = 0f;
         BillboardAudioSource.volume = 0f;
-        SceneAudioSource.volume = 0f;
+
         switchingStartedTime = Time.time;
-        fadingIn = SceneAudioSource;
-        fadingIn.volume = 1;
+        fadingIn = GameTrackAudioSource;
+        fadingIn.volume = .5f;
 
         SceneManager.activeSceneChanged += SceneChanged;
     }
@@ -71,16 +83,32 @@ public class BackgroundMusicManager : MonoBehaviour
         switch (switchTo)
         {
             case ActiveMusic.GameTrack:
-                fadingIn = SceneAudioSource;
+                fadingIn = GameTrackAudioSource;
                 break;
-            case ActiveMusic.DialogueTrack:
-                fadingIn = DialogueAudioSource;
+            case ActiveMusic.ToiletTrack:
+                fadingIn = ToilettTrackAudioSource;
                 break;
             case ActiveMusic.BillboardTrack:
                 fadingIn = BillboardAudioSource;
                 break;
+            case ActiveMusic.BarTrack:
+                fadingIn = BarTrackAudioSource;
+                break;
+            case ActiveMusic.GameEndTrack:
+                fadingIn = GameTrackAudioSource;
+                break;
         }
-        
+
+        // dark fantasy
+        // gamestart
+        // entrance too
+        // warderobe
+
+        // bar ambient
+        // end scene sound vergessen
+        // menu music für endscene und credits
+
+        // toilett sound
         StartCoroutine("Fade");
     }
     
@@ -93,8 +121,28 @@ public class BackgroundMusicManager : MonoBehaviour
 
         switch(next.buildIndex)
         {
-            case 5:
-                // Bulletin board
+            case 0: // Game Start
+                ActiveMusic = ActiveMusic.GameTrack;
+                break;
+            case 1: // Entrance
+                ActiveMusic = ActiveMusic.GameTrack;
+                break;
+            case 2: // Warderobe
+                ActiveMusic = ActiveMusic.GameTrack;
+                break;
+            case 3: // Bar
+                ActiveMusic = ActiveMusic.BarTrack;
+                break;
+            case 4: // Bathroom
+                ActiveMusic = ActiveMusic.ToiletTrack;
+                break;
+            case 5: // Bulletin board
+                ActiveMusic = ActiveMusic.BillboardTrack;
+                break;
+            case 6: // Game end
+                ActiveMusic = ActiveMusic.BillboardTrack;
+                break;
+            case 7: // Credit
                 ActiveMusic = ActiveMusic.BillboardTrack;
                 break;
             default:
@@ -111,15 +159,15 @@ public class BackgroundMusicManager : MonoBehaviour
         while (Time.time < finishtime)
         {
             t = (Time.time - switchingStartedTime) / (finishtime - switchingStartedTime);
-            fadingOut.volume = 1 - t;
-            fadingIn.volume = t;
+            fadingOut.volume = (1 - t) * .5f;
+            fadingIn.volume = t * .5f;
 
             yield return null;
         }
 
 
         fadingOut.volume = 0;
-        fadingIn.volume = 1;
+        fadingIn.volume = .5f;
 
         trackSwitched = true;
     }
