@@ -97,14 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 5
-  _FXClip:
-  - {fileID: 8300000, guid: e119a01df57ac1c4dacf6d1247d131ec, type: 3}
-  - {fileID: 8300000, guid: f2288e3b03f03d848abac6a4bac84751, type: 3}
-  - {fileID: 8300000, guid: da874223134180141bd03c0055b30c5e, type: 3}
-  - {fileID: 8300000, guid: a777bc9a835e748498fb3094ce99dd06, type: 3}
-  - {fileID: 8300000, guid: e7e02fade236c0d4aa57cd4ca70f5b5a, type: 3}
-  - {fileID: 8300000, guid: 6cabf613bd251e4479079208cc288329, type: 3}
-  - {fileID: 8300000, guid: dcb0caab51da03d49b77f51af3c44506, type: 3}
+  _FXClip: {fileID: 8300000, guid: 6cabf613bd251e4479079208cc288329, type: 3}
 --- !u!65 &1746194785907936886
 BoxCollider:
   m_ObjectHideFlags: 0
