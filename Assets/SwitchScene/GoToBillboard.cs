@@ -16,6 +16,13 @@ public class GoToBillboard : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
+        float click = context.ReadValue<float>();
+        var clickPressed = click > 0.1f ? true : false;
+        if (!clickPressed)
+        {
+            return;
+        }
+
         Vector2 mousePos2D = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         RaycastHit2D[] hit2dList = Physics2D.RaycastAll(mousePos2D, Vector2.zero);

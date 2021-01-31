@@ -9,11 +9,6 @@ public class ItemCompareField : MonoBehaviour
     private List<ItemTypes> itemTypesToSolve = new List<ItemTypes>();
     private List<DragDropItem> currentEvidence = new List<DragDropItem>();
 
-    public void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other.gameObject.name);
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         var dragDropItem = collision.GetComponent<DragDropItem>();
