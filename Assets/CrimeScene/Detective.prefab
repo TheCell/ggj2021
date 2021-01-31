@@ -134,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 6937403763722419505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.169, y: -0.007, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.12124, y: 0.12124, z: 1.2124}
   m_Children:
   - {fileID: 649459059630586492}
   m_Father: {fileID: 0}
@@ -257,6 +257,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a883fad0034298945a76e676da312e52, type: 3}
   - {fileID: 8300000, guid: 3f619d7a4418d8e41958d282974fb23f, type: 3}
   - {fileID: 8300000, guid: 8d8fee146dec429418823646b6718a15, type: 3}
+  topOfScreenScaling: 0.065
+  topOfScreenYValue: -0.35
+  bottomOfScreenScaling: 0.12
+  bottomOfScreenYValue: -1.3
+  desiredScaling: 0
 --- !u!61 &-447617445964572685
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -32,6 +32,16 @@ public class CrimeSceneControl : MonoBehaviour
     private bool _isMoving;
 
 
+    [SerializeField]
+    private float topOfScreenScaling;
+    [SerializeField]
+    private float topOfScreenYValue;
+    [SerializeField]
+    private float bottomOfScreenScaling;
+    [SerializeField]
+    private float bottomOfScreenYValue;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +111,12 @@ public class CrimeSceneControl : MonoBehaviour
         {
             gameObject.GetComponentInChildren<Animator>().SetBool("Walking", false);
         }
+
+        float currrentScreenYRatio = (player.transform.position.y - bottomOfScreenYValue) / (topOfScreenYValue - bottomOfScreenYValue);
+        float desiredScaling = (currrentScreenYRatio * (topOfScreenScaling - bottomOfScreenScaling) + bottomOfScreenScaling);
+
+        gameObject.transform.localScale = new Vector3(desiredScaling, desiredScaling, desiredScaling);
+       
     }
 
     // FixedUpdate is called on a fixed timestep
