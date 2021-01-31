@@ -80,7 +80,7 @@ public class DoorLogic : MonoBehaviour
                 if (action.name.Equals("MoveTo"))
                 {
                     moveToAction = action;
-                    moveToAction.canceled += OnClick;
+                    moveToAction.performed += OnClick;
                 }
             }
         } else 
@@ -92,7 +92,7 @@ public class DoorLogic : MonoBehaviour
 
     private void OnDestroy()
     {
-        moveToAction.canceled -= OnClick;
+        moveToAction.performed -= OnClick;
     }
 
 }
