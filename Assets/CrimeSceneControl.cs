@@ -41,6 +41,10 @@ public class CrimeSceneControl : MonoBehaviour
     [SerializeField]
     private float bottomOfScreenYValue;
 
+    private float currentScaling;
+
+    public float speedAtUnitScale;
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +78,7 @@ public class CrimeSceneControl : MonoBehaviour
                 {
                     moveToAction.started += MoveTo;
                 }
-                
+
             } else
             {
                 Debug.Log("The player input map does not exist!");
@@ -113,17 +117,19 @@ public class CrimeSceneControl : MonoBehaviour
         }
 
         float currrentScreenYRatio = (player.transform.position.y - bottomOfScreenYValue) / (topOfScreenYValue - bottomOfScreenYValue);
-        float desiredScaling = (currrentScreenYRatio * (topOfScreenScaling - bottomOfScreenScaling) + bottomOfScreenScaling);
+        currentScaling = (currrentScreenYRatio * (topOfScreenScaling - bottomOfScreenScaling) + bottomOfScreenScaling);
 
-        gameObject.transform.localScale = new Vector3(desiredScaling, desiredScaling, desiredScaling);
-       
+        gameObject.transform.localScale = new Vector3(currentScaling, currentScaling, currentScaling);
+
     }
 
+    public float actualSpeed;
     // FixedUpdate is called on a fixed timestep
     private void FixedUpdate()
     {
         // Moves the player transform position towards the destination at a given speed
-        player.transform.position = Vector3.MoveTowards(player.transform.position, destination, 0.1f);
+        actualSpeed = currentScaling * speedAtUnitScale;
+        player.transform.position = Vector3.MoveTowards(player.transform.position, destination, actualSpeed * Time.fixedDeltaTime);
 
         _isMoving = Vector3.Distance(player.transform.position, destination) > 0.1f;
 
@@ -235,5 +241,5 @@ public class CrimeSceneControl : MonoBehaviour
         }
         return false;
     }
-    
+
 }

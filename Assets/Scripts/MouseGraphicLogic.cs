@@ -43,7 +43,7 @@ public class MouseGraphicLogic : MonoBehaviour
             {
                 if (hit.transform.GetComponent<Item>() != null)
                 {
-                    Cursor.SetCursor(handTexture, handHotSpot, cursorMode);
+                    SetCursorIfNotSet(handTexture, handHotSpot);
                     return;
                 }
             }
@@ -60,19 +60,29 @@ public class MouseGraphicLogic : MonoBehaviour
             {
                 if (hit2d.collider.gameObject.GetComponent<Dialogue>() != null)
                 {
-                    Cursor.SetCursor(talkTexture, talkHotSpot, cursorMode);
+                    SetCursorIfNotSet(talkTexture, talkHotSpot);
                     return;
                 }
                 if (hit2d.collider.gameObject.GetComponent<DragDropItem>() != null)
                 {
-                    Cursor.SetCursor(handTexture, handHotSpot, cursorMode);
+                    SetCursorIfNotSet(handTexture, handHotSpot);
                     return;
                 }
             }
         }
-        Cursor.SetCursor(pointTexture, pointHotSpot, cursorMode);
+        SetCursorIfNotSet(pointTexture, pointHotSpot);
     }
 
+    private Texture2D lastSetTexture;
+
+    void SetCursorIfNotSet(Texture2D textureToSet, Vector2 textureHotspot)
+    {
+        if (lastSetTexture != textureToSet)
+        {
+            Cursor.SetCursor(textureToSet, textureHotspot, cursorMode);
+            lastSetTexture = textureToSet;
+        }
+    }
     
     
 }
