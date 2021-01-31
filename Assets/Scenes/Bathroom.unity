@@ -1302,6 +1302,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6937403763722419504, guid: 59ef2b9bd3f02524cafa49af5650e412, type: 3}
+      propertyPath: topOfScreenYValue
+      value: -2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937403763722419504, guid: 59ef2b9bd3f02524cafa49af5650e412, type: 3}
+      propertyPath: topOfScreenScaling
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937403763722419504, guid: 59ef2b9bd3f02524cafa49af5650e412, type: 3}
+      propertyPath: bottomOfScreenYValue
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937403763722419504, guid: 59ef2b9bd3f02524cafa49af5650e412, type: 3}
+      propertyPath: bottomOfScreenScaling
+      value: 0.27
+      objectReference: {fileID: 0}
     - target: {fileID: 6937403763722419505, guid: 59ef2b9bd3f02524cafa49af5650e412, type: 3}
       propertyPath: m_Name
       value: Detective
