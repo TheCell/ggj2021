@@ -28,6 +28,7 @@ public class CrimeSceneControl : MonoBehaviour
 
     [SerializeField]
     private AudioClip[] _walkFX;
+    [SerializeField]
     private AudioSource _audioSourceComponent;
     private bool _isMoving;
 
@@ -49,7 +50,7 @@ public class CrimeSceneControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _audioSourceComponent = GetComponent<AudioSource>();
+        //_audioSourceComponent = GetComponent<AudioSource>();
         collidingWith = new HashSet<GameObject>();
         destination = player.transform.position;
 
@@ -109,6 +110,7 @@ public class CrimeSceneControl : MonoBehaviour
             if (_audioSourceComponent.isPlaying == false)
             {
                 _audioSourceComponent.clip = _walkFX[UnityEngine.Random.Range(0, 3)];
+                _audioSourceComponent.Play();
             }
             gameObject.GetComponentInChildren<Animator>().SetBool("Walking", true);
         } else
