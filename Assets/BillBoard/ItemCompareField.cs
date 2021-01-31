@@ -8,6 +8,12 @@ public class ItemCompareField : MonoBehaviour
     [SerializeField]
     private List<ItemTypes> itemTypesToSolve = new List<ItemTypes>();
     private List<DragDropItem> currentEvidence = new List<DragDropItem>();
+    private SpriteRenderer spriteRenderer;
+
+    public void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -65,6 +71,22 @@ public class ItemCompareField : MonoBehaviour
         else
         {
             allEvidenceCorrect = false;
+        }
+
+        AdjustSprite(allEvidenceCorrect);
+    }
+
+    private void AdjustSprite(bool correct)
+    {
+        if (spriteRenderer == null)
+        {
+            return;
+        }
+
+        spriteRenderer.color = new Color(1, 1, 1);
+        if (correct)
+        {
+            spriteRenderer.color = new Color(0.8f, 1, 0.8f);
         }
     }
 }

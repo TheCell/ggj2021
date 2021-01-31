@@ -52,11 +52,20 @@ public class DragDropItem : MonoBehaviour
 
         if (objectTransformToDrag == null)
         {
-            RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
-            if (hit.transform != null && hit.transform.GetComponent<DragDropItem>() != null)
+            RaycastHit2D[] hits = Physics2D.RaycastAll(worldPos, Vector2.zero);
+            for (int i = 0; i < hits.Length; i++)
             {
-                objectTransformToDrag = hit.transform;
+                if (hits[i].transform.GetComponent<DragDropItem>() != null)
+                {
+                    objectTransformToDrag = hits[i].transform;
+                }
             }
+
+            //RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+            //if (hit.transform != null && hit.transform.GetComponent<DragDropItem>() != null)
+            //{
+            //    objectTransformToDrag = hit.transform;
+            //}
         }
         else
         {
