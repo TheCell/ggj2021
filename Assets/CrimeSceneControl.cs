@@ -96,6 +96,10 @@ public class CrimeSceneControl : MonoBehaviour
             {
                 _audioSourceComponent.clip = _walkFX[UnityEngine.Random.Range(0, 3)];
             }
+            gameObject.GetComponentInChildren<Animator>().SetBool("Walking", true);
+        } else
+        {
+            gameObject.GetComponentInChildren<Animator>().SetBool("Walking", false);
         }
     }
 

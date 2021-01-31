@@ -95,7 +95,6 @@ public class DialogueControl : MonoBehaviour
 
         var animator = dialogue.gameObject.GetComponentInChildren<Animator>();
         animator.SetBool("Talking", true);
-        Debug.Log("Set Talking in " + dialogue.gameObject.name + " animator to true");
     }
 
     public void goToQuestions()
