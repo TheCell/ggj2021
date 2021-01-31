@@ -25,6 +25,8 @@ public class CrimeSceneControl : MonoBehaviour
 
     private InputAction moveToAction;
 
+    public bool isMoving;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +92,7 @@ public class CrimeSceneControl : MonoBehaviour
     {
         // Moves the player transform position towards the destination at a given speed
         player.transform.position = Vector3.MoveTowards(player.transform.position, destination, 0.1f);
+        isMoving = Vector3.Distance(player.transform.position, destination) > 0.05;
     }
 
     public void MoveTo(InputAction.CallbackContext context)
