@@ -9,15 +9,12 @@ public class ItemManager : MonoBehaviour
     private static HashSet<TypeObjectData> spawnedObjectsHashSet = new HashSet<TypeObjectData>();
     private static List<TypeObjectData> spawnedObjects = new List<TypeObjectData>();
 
-    private static List<ItemCompareField> _itemCompareFields = new List<ItemCompareField>();
+    private List<ItemCompareField> _itemCompareFields = new List<ItemCompareField>();
 
     public void Start()
     {
-        if (_itemCompareFields.Count == 0)
-        {
-            var itemCompareFields = FindObjectsOfType<ItemCompareField>();
-            _itemCompareFields.AddRange(itemCompareFields);
-        }
+        var itemCompareFields = FindObjectsOfType<ItemCompareField>();
+        _itemCompareFields.AddRange(itemCompareFields);
 
         if (DragDropItemPrefab == null)
         {
