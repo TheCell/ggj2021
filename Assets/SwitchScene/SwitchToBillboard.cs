@@ -57,7 +57,7 @@ public class SwitchToBillboard : MonoBehaviour
         currentSceneIndex = next.buildIndex;
         //cameFromSceneIndex = current.buildIndex;
         //currentSceneIndex = newScene.buildIndex;
-        SetupInputAction();
+        //SetupInputAction();
     }
 
     private void SetupInputAction()
@@ -70,7 +70,8 @@ public class SwitchToBillboard : MonoBehaviour
         //inputActionsSet = true;
         // I'm SURE this can be done MUCH better
         Debug.Log("SetupInputAction");
-        playerInput = FindObjectOfType<PlayerInput>();
+        //playerInput = FindObjectOfType<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
         Debug.Log(playerInput.gameObject.name);
         if (playerInput != null)
         {
