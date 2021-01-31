@@ -18,6 +18,8 @@ public class MouseGraphicLogic : MonoBehaviour
     private InputAction _uiDragActionHandle;
     private InputAction _playerDragActionHandle;
 
+    private GameObject _activeHightlightObject;
+
 
     private Canvas _dialogueCanvas;
 
@@ -63,6 +65,7 @@ public class MouseGraphicLogic : MonoBehaviour
                 if (hit.transform.GetComponent<Item>() != null)
                 {
                     SetCursorIfNotSet(handTexture, handHotSpot);
+                    SetNewActiveHightlight(hit.collider.gameObject);
                     return;
                 }
             }
@@ -90,6 +93,7 @@ public class MouseGraphicLogic : MonoBehaviour
             }
         }
         SetCursorIfNotSet(pointTexture, pointHotSpot);
+        SetNewActiveHightlight(null);
     }
 
     private Texture2D lastSetTexture;
@@ -103,5 +107,25 @@ public class MouseGraphicLogic : MonoBehaviour
         }
     }
     
+    void SetNewActiveHightlight(GameObject interactingObject)
+    {
+        if (_activeHightlightObject != interactingObject) {
+            if (_activeHightlightObject != null) {
+                SpriteRenderer oldHighlightRenderer = Array.Find(_activeHightlightObject.GetComponentsInChildren<SpriteRenderer>(true), renderer => renderer.gameObject.name == "Highlight");
+                if (oldHighlightRenderer)
+                {
+                    oldHighlightRenderer.enabled = false;
+                }
+            }
+            if (interactingObject != null) {
+                SpriteRenderer highlightRenderer = Array.Find(interactingObject.GetComponentsInChildren<SpriteRenderer>(true), renderer => renderer.gameObject.name == "Highlight");
+                if (highlightRenderer)
+                {
+                    highlightRenderer.enabled = true;
+                }
+            }
+            _activeHightlightObject = interactingObject;
+        }
+    }
     
 }
