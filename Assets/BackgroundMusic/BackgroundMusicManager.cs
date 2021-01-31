@@ -83,10 +83,24 @@ public class BackgroundMusicManager : MonoBehaviour
         
         StartCoroutine("Fade");
     }
-
-    private void SceneChanged(Scene oldScene, Scene newScene)
+    
+    private void SceneChanged(Scene current, Scene next)
     {
-        //if (newScene.name)
+        if (current == null)
+        {
+            return;
+        }
+
+        switch(next.buildIndex)
+        {
+            case 5:
+                // Bulletin board
+                ActiveMusic = ActiveMusic.BillboardTrack;
+                break;
+            default:
+                ActiveMusic = ActiveMusic.GameTrack;
+                break;
+        }
     }
 
     IEnumerator Fade()

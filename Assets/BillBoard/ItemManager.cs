@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemManager : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class ItemManager : MonoBehaviour
     private static HashSet<TypeObjectData> spawnedObjectsHashSet = new HashSet<TypeObjectData>();
     private static List<TypeObjectData> spawnedObjects = new List<TypeObjectData>();
 
+    private List<ItemCompareField> _itemCompareFields = new List<ItemCompareField>();
+
     public void Start()
     {
+        var itemCompareFields = FindObjectsOfType<ItemCompareField>();
+        _itemCompareFields.AddRange(itemCompareFields);
+
         if (DragDropItemPrefab == null)
         {
             return;
@@ -45,7 +51,7 @@ public class ItemManager : MonoBehaviour
 
     public void Update()
     {
-        
+        CanGameEnd();
     }
 
     public void OnDestroy()
@@ -57,5 +63,28 @@ public class ItemManager : MonoBehaviour
                 typeObjectData.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void CanGameEnd()
+    {
+        var canEndGame = true;
+
+        _itemCompareFields.ForEach((itemCompareField) =>
+        {
+            if (!itemCompareField.allEvidenceCorrect)
+            {
+                canEndGame = false;
+            }
+        });
+
+        if (canEndGame)
+        {
+            EndScreen();
+        }
+    }
+
+    private void EndScreen()
+    {
+        SceneManager.LoadScene(6);
     }
 }

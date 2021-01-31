@@ -2250,7 +2250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616374493350545039, guid: 2b2a47010d028a241a0be1110b0f33b3, type: 3}
       propertyPath: m_Name
-      value: SceneSwitcher
+      value: SwitchToBillboard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2a47010d028a241a0be1110b0f33b3, type: 3}

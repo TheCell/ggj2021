@@ -96,6 +96,10 @@ public class CrimeSceneControl : MonoBehaviour
             {
                 _audioSourceComponent.clip = _walkFX[UnityEngine.Random.Range(0, 3)];
             }
+            gameObject.GetComponentInChildren<Animator>().SetBool("Walking", true);
+        } else
+        {
+            gameObject.GetComponentInChildren<Animator>().SetBool("Walking", false);
         }
     }
 
@@ -147,12 +151,25 @@ public class CrimeSceneControl : MonoBehaviour
             }
 
 
-            // We want to move only if the ground is in the collider list
-            var walkableAreaHit = Array.Find(hit2dList, hit => hit.collider.gameObject.name == "WalkableArea");
-            if (walkableAreaHit.collider != null){
-                destination = mouseWorldPos;
-                // The z value is not useful here, we set to 0
-                destination.z = 0;
+            // Decide if the destination should be the point that was clicked, or to a npc's origin
+
+            if (interactionTarget != null && interactionTarget.gameObject.GetComponent<Dialogue>() != null)
+            {
+                //We've clicked on a character with dialogue: walk towards their character.
+                destination = interactionTarget.gameObject.transform.position;
+            }
+            else
+            {
+                // We've clicked on somethat that does not have some interaction point, so we check if it's a walkable area and set the destination accordingly
+
+                // We want to move only if the ground is in the collider list
+                var walkableAreaHit = Array.Find(hit2dList, hit => hit.collider.gameObject.name == "WalkableArea");
+                if (walkableAreaHit.collider != null)
+                {
+                    destination = mouseWorldPos;
+                    // The z value is not useful here, we set to 0
+                    destination.z = 0;
+                }
             }
             // If the destination is to the left, flip the sprite to the left, and vice versa
             // Depending on the animations we have, this might get replaced

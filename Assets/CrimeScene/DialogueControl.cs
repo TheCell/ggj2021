@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueControl : MonoBehaviour
 {
-
+    
     public TMP_Text dialogueOption1;
     public TMP_Text dialogueOption2;
     public TMP_Text dialogueOption3;
@@ -93,7 +93,8 @@ public class DialogueControl : MonoBehaviour
         dialogueOption3.SetText(currentDialogue.question3);
         dialogueName.SetText(currentDialogue.suspectName);
 
-
+        var animator = dialogue.gameObject.GetComponentInChildren<Animator>();
+        animator.SetBool("Talking", true);
     }
 
     public void goToQuestions()
@@ -151,6 +152,10 @@ public class DialogueControl : MonoBehaviour
         playerInput.SwitchCurrentActionMap("Player");
         dialogueCanvas.gameObject.SetActive(false); ;
 
+
+        var animator = currentDialogue.gameObject.GetComponentInChildren<Animator>();
+        animator.SetBool("Talking", false);
+        Debug.Log("Set Talking in " + currentDialogue.gameObject.name + " animator to false");
     }
 
     private void toggleGroup(GameObject group, bool enable)

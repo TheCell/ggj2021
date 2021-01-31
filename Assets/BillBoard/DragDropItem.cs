@@ -36,7 +36,8 @@ public class DragDropItem : MonoBehaviour
     public void OnClick(InputAction.CallbackContext context)
     {
         objectTransformToDrag = null;
-        clickPressed = !clickPressed;
+        float click = context.ReadValue<float>();
+        clickPressed = click > 0.1f ? true : false;
     }
 
     public void OnDrag(InputAction.CallbackContext context)
@@ -71,13 +72,19 @@ public class DragDropItem : MonoBehaviour
             return;
         }
 
+        bool foundItemImage = false;
         for (int i = 0; i < allItemAndImages.Length; i++)
         {
             var itemAndImage = allItemAndImages[i];
             if (itemAndImage.itemType == _itemType)
             {
                 spriteRenderer.sprite = itemAndImage.sprite;
+                foundItemImage = true;
             }
+        }
+        if (!foundItemImage)
+        {
+            Debug.Log("Did not find a graphic for " + _itemType);
         }
     }
 
