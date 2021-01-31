@@ -82,11 +82,11 @@ public class ItemManager : MonoBehaviour
 
         if (canEndGame)
         {
-            EndScreend();
+            EndScreen();
         }
     }
 
-    private void EndScreend()
+    private void EndScreen()
     {
         SceneManager.LoadScene(6);
     }
